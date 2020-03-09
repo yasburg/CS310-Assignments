@@ -89,9 +89,8 @@ public class YasinJDBCManager {
                     pStatement.execute();
                 }
 
-
-
             }
+            connection.close();
             System.out.println("All countries were inserted successfully.");
         }
         catch (Exception e) {
@@ -124,6 +123,11 @@ public class YasinJDBCManager {
                 country.setCity(cityName);
                 country.setCountryPopulation(population);
             }
+            else{
+                System.out.println("Could not find the country with id " + countryID);
+                return country;
+            }
+            connection.close();
 
         } catch (SQLException e) {
             System.out.println("SQL Exception occurred while getting the country from the database!");
@@ -144,7 +148,7 @@ public class YasinJDBCManager {
             if (rowsDeleted > 0) {
                 System.out.println("The country with id " + countryID + " was deleted successfully.");
             }
-
+            connection.close();
 
         } catch (SQLException e) {
             System.out.println("SQL Exception occurred while deleting a country!");
@@ -166,6 +170,7 @@ public class YasinJDBCManager {
             if (rowsUpdated > 0) {
                 System.out.println("An existing country population was updated successfully.");
             }
+            connection.close();
 
         } catch (SQLException e) {
             System.out.println("SQL Exception occurred while updating a country!");

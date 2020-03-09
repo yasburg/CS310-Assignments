@@ -1,23 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="896b07ba-2d30-4ceb-838d-b40595a05507" name="Default Changelist" comment="fixing the duplicate insertion and adding if condition for the .countryFind">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/mysql_connector_java_8_0_19.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/YasinAydinCS310Homework1Q1.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/world.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/lib/mysql-connector-java-8.0.19.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/YasinAydinCS310Homework1Q1/META-INF/YasinAydinCS310Homework1Q1.kotlin_module" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/YasinAydinCS310Homework1Q1/edu/sabanciuniv/cs310/homework1/main/MainClass.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/YasinAydinCS310Homework1Q1/edu/sabanciuniv/cs310/homework1/model/Country.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/out/production/YasinAydinCS310Homework1Q1/edu/sabanciuniv/cs310/homework1/model/YasinJDBCManager.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/edu/sabanciuniv/cs310/homework1/main/MainClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/edu/sabanciuniv/cs310/homework1/model/Country.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/edu/sabanciuniv/cs310/homework1/model/YasinJDBCManager.java" afterDir="false" />
+    <list default="true" id="896b07ba-2d30-4ceb-838d-b40595a05507" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/YasinAydinCS310Homework1Q1/edu/sabanciuniv/cs310/homework1/model/YasinJDBCManager.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/YasinAydinCS310Homework1Q1/edu/sabanciuniv/cs310/homework1/model/YasinJDBCManager.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/sabanciuniv/cs310/homework1/main/MainClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/sabanciuniv/cs310/homework1/main/MainClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/edu/sabanciuniv/cs310/homework1/model/YasinJDBCManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/edu/sabanciuniv/cs310/homework1/model/YasinJDBCManager.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,27 +20,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/edu/sabanciuniv/cs310/homework1/model/YasinJDBCManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="199">
-              <caret line="136" column="45" lean-forward="true" selection-start-line="136" selection-start-column="45" selection-end-line="136" selection-end-column="45" />
+            <state relative-caret-position="119">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
               <folding>
                 <element signature="method#YasinJDBCManager#0;class#YasinJDBCManager#0" />
                 <element signature="method#printCountries#0;class#YasinJDBCManager#0" />
                 <element signature="method#readFromFile#0;class#YasinJDBCManager#0" />
+                <element signature="method#writeIntoTable#0;class#YasinJDBCManager#0" />
                 <element signature="method#getCountryByID#0;class#YasinJDBCManager#0" />
+                <element signature="method#deleteCountryByID#0;class#YasinJDBCManager#0" />
                 <element signature="method#updateCountryPopulationByID#0;class#YasinJDBCManager#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/edu/sabanciuniv/cs310/homework1/main/MainClass.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="41" lean-forward="true" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
+            <state relative-caret-position="170">
+              <caret line="10" column="54" selection-start-line="10" selection-start-column="54" selection-end-line="10" selection-end-column="54" />
             </state>
           </provider>
         </entry>
@@ -108,9 +98,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="697" />
-    <option name="y" value="-20" />
-    <option name="width" value="955" />
+    <option name="x" value="717" />
+    <option name="y" value="40" />
+    <option name="width" value="1078" />
     <option name="height" value="1040" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -119,6 +109,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -155,15 +147,14 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../YasinAydinCS310Homework1Q2" />
+    <property name="ignore_missing_gitignore" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../WeeklyCodes" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -239,18 +230,30 @@
       <workItem from="1583009132808" duration="74000" />
       <workItem from="1583168537220" duration="52000" />
       <workItem from="1583171218259" duration="3376000" />
-      <workItem from="1583177326332" duration="134000" />
+      <workItem from="1583177326332" duration="247000" />
+      <workItem from="1583180972808" duration="101000" />
+      <workItem from="1583331545727" duration="208000" />
+      <workItem from="1583353435258" duration="134000" />
+      <workItem from="1583392958209" duration="976000" />
+      <workItem from="1583788870742" duration="95000" />
     </task>
+    <task id="LOCAL-00001" summary="fixing the duplicate insertion and adding if condition for the .getCountryByID() so that it will only return if it finds it">
+      <created>1583177509322</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1583177509322</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23119000" />
+    <option name="totallyTimeSpent" value="24746000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12751678" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13557047" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -285,6 +288,10 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fixing the duplicate insertion and adding if condition for the .getCountryByID() so that it will only return if it finds it" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixing the duplicate insertion and adding if condition for the .getCountryByID() so that it will only return if it finds it" />
+  </component>
   <component name="XDebuggerManager">
     <watches-manager>
       <configuration name="Application">
@@ -313,15 +320,24 @@
     <entry file="file://$PROJECT_DIR$/src/edu/sabanciuniv/cs310/homework1/META-INF/persistence.xml" />
     <entry file="file://$PROJECT_DIR$/src/edu/sabanciuniv/cs310/homework1/model/YasinJDBCManager.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="136" column="45" lean-forward="true" selection-start-line="136" selection-start-column="45" selection-end-line="136" selection-end-column="45" />
+        <state relative-caret-position="119">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
           <folding>
             <element signature="method#YasinJDBCManager#0;class#YasinJDBCManager#0" />
             <element signature="method#printCountries#0;class#YasinJDBCManager#0" />
             <element signature="method#readFromFile#0;class#YasinJDBCManager#0" />
+            <element signature="method#writeIntoTable#0;class#YasinJDBCManager#0" />
             <element signature="method#getCountryByID#0;class#YasinJDBCManager#0" />
+            <element signature="method#deleteCountryByID#0;class#YasinJDBCManager#0" />
             <element signature="method#updateCountryPopulationByID#0;class#YasinJDBCManager#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/edu/sabanciuniv/cs310/homework1/main/MainClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="54" selection-start-line="10" selection-start-column="54" selection-end-line="10" selection-end-column="54" />
         </state>
       </provider>
     </entry>
@@ -332,13 +348,6 @@
           <folding>
             <element signature="method#toString#0;class#Country#0" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/edu/sabanciuniv/cs310/homework1/main/MainClass.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="41" lean-forward="true" selection-start-line="12" selection-start-column="41" selection-end-line="12" selection-end-column="41" />
         </state>
       </provider>
     </entry>
