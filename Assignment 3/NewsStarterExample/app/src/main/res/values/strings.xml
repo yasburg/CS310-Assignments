@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">News</string>
+    <string name="filters">Filters</string>
+    <string-array name="filters">
+        <item>All</item>
+        <item>Economics</item>
+        <item>Politics</item>
+        <item>Sports</item>
+    </string-array>
 </resources>
