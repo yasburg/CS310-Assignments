@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.AdapterViewAnimator;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
@@ -15,7 +17,7 @@ import java.util.List;
 import edu.sabanciuniv.newsstarterexample.model.CommentItem;
 import edu.sabanciuniv.newsstarterexample.model.NewsItem;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements NewsAdapter.NewsItemClickListener{
 
     RecyclerView newsRecView;
     Spinner spFilters;
@@ -36,12 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
         spFilters.setAdapter(adp1);
 
-        NewsAdapter adp2 = new NewsAdapter(NewsItem.getAllNews(), this, new NewsAdapter.NewsItemClickListener() {
-            @Override
-            public void newItemClicked(NewsItem selectedNewsItem) {
-                Toast.makeText(MainActivity.this, selectedNewsItem.getTitle(), Toast.LENGTH_SHORT).show();
-            }
-        });
+        NewsAdapter adp2 = new NewsAdapter(NewsItem.getAllNews(), this, this);
         newsRecView.setLayoutManager(new LinearLayoutManager(this));
         newsRecView.setAdapter(adp2);
 
@@ -52,5 +49,12 @@ public class MainActivity extends AppCompatActivity {
 
         List<CommentItem> comments = NewsItem.getCommentsByNewsId(0);
         Log.i("DEV","Total of " + comments.size() + " comments exist for newsid 0");
+    }
+
+    @Override
+    public void newsItemClicked(NewsItem selectedNewsItem) {
+        Intent i = new Intent(this, NewsDetailActivity.class);
+        i.putExtra("selectednews", selectedNewsItem);
+        startActivity(i);
     }
 }

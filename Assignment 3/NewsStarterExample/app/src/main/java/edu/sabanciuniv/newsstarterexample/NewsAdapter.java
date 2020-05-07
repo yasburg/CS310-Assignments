@@ -47,7 +47,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
         holder.root.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                listener.newItemClicked(newsItems.get(position));
+                listener.newsItemClicked(newsItems.get(position));
             }
         });
     }
@@ -58,7 +58,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
     }
 
     public interface NewsItemClickListener{
-        public void newItemClicked(NewsItem selectedNewsItem);
+        public void newsItemClicked(NewsItem selectedNewsItem);
     }
 
     class NewsViewHolder extends RecyclerView.ViewHolder {
