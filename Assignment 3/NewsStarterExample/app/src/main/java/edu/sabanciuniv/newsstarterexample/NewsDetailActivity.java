@@ -1,9 +1,14 @@
 package edu.sabanciuniv.newsstarterexample;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.text.SimpleDateFormat;
@@ -37,5 +42,30 @@ public class NewsDetailActivity extends AppCompatActivity {
 
         getSupportActionBar().setTitle(R.string.news_details);
 
+        ActionBar currentBar = getSupportActionBar();
+        currentBar.setHomeButtonEnabled(true);
+        currentBar.setDisplayHomeAsUpEnabled(true);
+        currentBar.setHomeAsUpIndicator(R.drawable.ic_arrow_back_white_24dp);
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.news_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        super.onOptionsItemSelected(item);
+        if (item.getItemId() == android.R.id.home) {
+            finish();
+        }
+        else if (item.getItemId() == R.id.newscomment) {
+            Intent i = new Intent(this, CommentsActivity.class);
+            i.putExtra("selectednews", selectedNews);
+            startActivity(i);
+        }
+        return true;
     }
 }
