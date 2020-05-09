@@ -1,4 +1,4 @@
-package edu.sabanciuniv.yasinaydinhomework3;
+package edu.sabanciuniv.yasinaydinhomework3.activities;
 
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -6,6 +6,8 @@ import android.view.MenuItem;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+
+import edu.sabanciuniv.yasinaydinhomework3.R;
 
 public class PostCommentActivity extends AppCompatActivity {
 

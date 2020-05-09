@@ -3,7 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/../NewsStarterExample.iml" filepath="$PROJECT_DIR$/../NewsStarterExample.iml" group="NewsStarterExample" />
-      <module fileurl="file://$PROJECT_DIR$/YasinAydinHomework3-app.iml" filepath="$PROJECT_DIR$/YasinAydinHomework3-app.iml" group="NewsStarterExample/app" />
+      <module fileurl="file://$PROJECT_DIR$/../YasinAydinHomework3.iml" filepath="$PROJECT_DIR$/../YasinAydinHomework3.iml" group="YasinAydinHomework3" />
+      <module fileurl="file://$PROJECT_DIR$/YasinAydinHomework3-app.iml" filepath="$PROJECT_DIR$/YasinAydinHomework3-app.iml" group="YasinAydinHomework3/app" />
       <module fileurl="file://$PROJECT_DIR$/app.iml" filepath="$PROJECT_DIR$/app.iml" group="NewsStarterExample/app" />
     </modules>
   </component>

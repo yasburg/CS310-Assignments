@@ -1,4 +1,4 @@
-package edu.sabanciuniv.yasinaydinhomework3;
+package edu.sabanciuniv.yasinaydinhomework3.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,6 +13,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.text.SimpleDateFormat;
 
+import edu.sabanciuniv.yasinaydinhomework3.ImageDownloadTask;
+import edu.sabanciuniv.yasinaydinhomework3.R;
 import edu.sabanciuniv.yasinaydinhomework3.model.NewsItem;
 
 public class NewsDetailActivity extends AppCompatActivity {
@@ -37,8 +39,17 @@ public class NewsDetailActivity extends AppCompatActivity {
 
         txtDetailTitle.setText(selectedNews.getTitle());
         txtDetailDate.setText(new SimpleDateFormat("dd/MM/yyy").format(selectedNews.getNewsDate()));
-        imgDetailNews.setImageResource(selectedNews.getImageId());
+
+        if (selectedNews.getBitmap() == null) {
+            new ImageDownloadTask(imgDetailNews).execute(selectedNews);
+
+        } else {
+            imgDetailNews.setImageBitmap(selectedNews.getBitmap());
+        }
+
         txtDetailNews.setText(selectedNews.getText());
+
+
 
         getSupportActionBar().setTitle(R.string.news_details);
 

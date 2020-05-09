@@ -14,7 +14,7 @@ public class CommentItem {
     public CommentItem() {
     }
 
-    public CommentItem(int id,String name, String message) {
+    public CommentItem(int id, String name, String message) {
         this.name = name;
         this.message = message;
         this.id = id;

@@ -1,4 +1,4 @@
-package edu.sabanciuniv.yasinaydinhomework3;
+package edu.sabanciuniv.yasinaydinhomework3.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -14,6 +14,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
+import edu.sabanciuniv.yasinaydinhomework3.ImageDownloadTask;
+import edu.sabanciuniv.yasinaydinhomework3.R;
 import edu.sabanciuniv.yasinaydinhomework3.model.NewsItem;
 
 public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder> {
@@ -34,7 +36,6 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
     public NewsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View v = LayoutInflater.from(context).inflate(R.layout.news_row_layout, parent, false);
-
         return new NewsViewHolder(v);
     }
 
@@ -43,13 +44,20 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
 
         holder.txtDate.setText(new SimpleDateFormat("dd/MM/yyy").format(newsItems.get(position).getNewsDate()));
         holder.txtTitle.setText(newsItems.get(position).getTitle());
-        holder.imgNews.setImageResource(newsItems.get(position).getImageId());
         holder.root.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 listener.newsItemClicked(newsItems.get(position));
             }
         });
+
+        if (newsItems.get(position).getBitmap() == null) {
+            new ImageDownloadTask(holder.imgNews).execute(newsItems.get(position));
+
+        } else {
+            holder.imgNews.setImageBitmap(newsItems.get(position).getBitmap());
+        }
+
     }
 
     @Override

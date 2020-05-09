@@ -1,4 +1,4 @@
-package edu.sabanciuniv.yasinaydinhomework3;
+package edu.sabanciuniv.yasinaydinhomework3.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+import edu.sabanciuniv.yasinaydinhomework3.R;
 import edu.sabanciuniv.yasinaydinhomework3.model.CommentItem;
 
 public class CommentsAdapter extends RecyclerView.Adapter<CommentsAdapter.CommentsViewHolder> {
