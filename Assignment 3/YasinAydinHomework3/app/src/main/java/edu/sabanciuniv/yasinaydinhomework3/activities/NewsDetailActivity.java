@@ -29,7 +29,7 @@ public class NewsDetailActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_news_detail);
+        setContentView(R.layout.activity_news_detail_layout);
 
         selectedNews = (NewsItem) getIntent().getSerializableExtra("selectednews");
         txtDetailTitle = findViewById(R.id.txtdetailtitle);

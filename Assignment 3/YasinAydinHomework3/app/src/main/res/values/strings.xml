@@ -2,6 +2,7 @@
     <string name="app_name">News</string>
     <string name="filters">Filters</string>
     <string name="news_details">"News Details"</string>
+    <string name="comments">"Comments"</string>
     <string name="post_comment">"Post Comment"</string>
     <string-array name="filters">
         <item>All</item>

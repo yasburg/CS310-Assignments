@@ -9,6 +9,8 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
@@ -47,13 +49,7 @@ public class MainActivity extends AppCompatActivity implements NewsAdapter.NewsI
         //Boiler plate code:
         newsRecView = findViewById(R.id.newsrec);
         spFilters = findViewById(R.id.spfilter);
-
-        String[] filters = getResources().getStringArray(R.array.filters);
-
-        ArrayAdapter<String> adp1 =
-                new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, filters);
-
-        spFilters.setAdapter(adp1);
+        //
 
         adp2 = new NewsAdapter(data, this, this);
         newsRecView.setLayoutManager(new LinearLayoutManager(this));
@@ -61,6 +57,40 @@ public class MainActivity extends AppCompatActivity implements NewsAdapter.NewsI
 
         NewsTask tsk = new NewsTask();
         tsk.execute("http://94.138.207.51:8080/NewsApp/service/news/getall");
+
+
+        String[] filters = getResources().getStringArray(R.array.filters);
+        ArrayAdapter<String> adp1 = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, filters);
+        spFilters.setAdapter(adp1);
+
+        spFilters.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+                String selectedOperation = spFilters.getSelectedItem().toString();
+                NewsTask tsk = new NewsTask();
+                int categoryID;
+                if (selectedOperation.equals("All")) {
+                    tsk.execute("http://94.138.207.51:8080/NewsApp/service/news/getall");
+                } else if (selectedOperation.equals("Economics")) {
+                    categoryID = 4;
+                    tsk.execute("http://94.138.207.51:8080/NewsApp/service/news/getbycategoryid/"+String.valueOf(categoryID));
+                } else if (selectedOperation.equals("Politics")) {
+                    categoryID = 6;
+                    tsk.execute("http://94.138.207.51:8080/NewsApp/service/news/getbycategoryid/"+String.valueOf(categoryID));
+                } else if (selectedOperation.equals("Sports")) {
+                    categoryID = 5;
+                    tsk.execute("http://94.138.207.51:8080/NewsApp/service/news/getbycategoryid/"+String.valueOf(categoryID));
+                }
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                NewsTask tsk = new NewsTask();
+                tsk.execute("http://94.138.207.51:8080/NewsApp/service/news/getall");
+            }
+
+        });
 
     }
 

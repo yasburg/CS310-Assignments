@@ -17,7 +17,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-import org.w3c.dom.Comment;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -26,7 +25,6 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import edu.sabanciuniv.yasinaydinhomework3.R;
@@ -45,7 +43,8 @@ public class CommentsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_comments);
+        setContentView(R.layout.activity_comments_layout);
+        getSupportActionBar().setTitle(R.string.comments);
 
         data = new ArrayList<>();
 
@@ -60,12 +59,20 @@ public class CommentsActivity extends AppCompatActivity {
         CommentsActivity.CommentsTask tsk = new CommentsActivity.CommentsTask();
         tsk.execute("http://94.138.207.51:8080/NewsApp/service/news/getcommentsbynewsid/" + selectedNews.getId());
 
-        getSupportActionBar().setTitle(R.string.post_comment);
 
         ActionBar currentBar = getSupportActionBar();
         currentBar.setHomeButtonEnabled(true);
         currentBar.setDisplayHomeAsUpEnabled(true);
         currentBar.setHomeAsUpIndicator(R.drawable.ic_arrow_back_white_24dp);
+
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+
+        CommentsTask tsk = new CommentsTask();
+        tsk.execute("http://94.138.207.51:8080/NewsApp/service/news/getcommentsbynewsid/" + selectedNews.getId());
 
     }
 
