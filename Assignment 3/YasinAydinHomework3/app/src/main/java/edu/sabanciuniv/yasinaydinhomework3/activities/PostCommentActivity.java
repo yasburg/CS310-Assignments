@@ -1,9 +1,7 @@
 package edu.sabanciuniv.yasinaydinhomework3.activities;
 
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -12,6 +10,7 @@ import android.widget.EditText;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -42,9 +41,6 @@ public class PostCommentActivity extends AppCompatActivity {
         edittxtmessage = findViewById(R.id.edittxtmessage);
         btnpost = findViewById(R.id.btnpost);
 
-        String username = edittxtfullname.getText().toString();
-        String message = edittxtmessage.getText().toString();
-
         ActionBar currentBar = getSupportActionBar();
         currentBar.setHomeButtonEnabled(true);
         currentBar.setDisplayHomeAsUpEnabled(true);
@@ -65,7 +61,6 @@ public class PostCommentActivity extends AppCompatActivity {
 
         PostCommentActivity.PostCommentTask tsk = new PostCommentActivity.PostCommentTask();
         tsk.execute("http://94.138.207.51:8080/NewsApp/service/news/savecomment");
-        finish();
 
 
     }
@@ -97,8 +92,12 @@ public class PostCommentActivity extends AppCompatActivity {
                 DataOutputStream writer = new DataOutputStream(conn.getOutputStream());
                 writer.writeBytes(obj.toString());
 
-                if(conn.getResponseCode()==HttpURLConnection.HTTP_OK){
+                if (conn.getResponseCode() == HttpURLConnection.HTTP_OK) {
                     System.out.println("No problem posting a comment.");
+                    finish();
+                } else {
+                    System.out.println("PROBLEMM");
+                    showPostAlertDialog();
                 }
 
             } catch (JSONException | IOException e) {
@@ -108,5 +107,13 @@ public class PostCommentActivity extends AppCompatActivity {
             return buffer.toString();
         }
 
+        private void showPostAlertDialog() {
+
+            FragmentManager fm = getSupportFragmentManager();
+            PostAlertDialog dialog = new PostAlertDialog();
+            dialog.show(fm,"");
+        }
+
     }
+
 }
